@@ -6,13 +6,13 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 18:15:44 by canjugun          #+#    #+#             */
-/*   Updated: 2021/02/02 18:11:53 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:19:42 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_limit(int n)
+int	ft_limit(int n)
 {
 	return (n > 2147483646 || n < -2147483646);
 }

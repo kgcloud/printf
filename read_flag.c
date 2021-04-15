@@ -6,21 +6,22 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 16:15:39 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/05 18:59:43 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:41:15 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		read_suite(t_printf *kg, char *flag, int *i)
+void	read_suite(va_list ap, t_printf *kg, char *flag, int *i)
 {
-	int j;
+	int	j;
 
 	j = *i;
 	if (flag[j] == '0')
 	{
-		kg->droite == 0 ? kg->pad_o = 1 : kg->pad_o;
-		while (flag[j] && (flag[j] == '0' || flag[j] == '-'))
+		if (kg->droite == 0)
+			kg->pad_o = 1;
+		while (flag[j++] && (flag[j] == '0' || flag[j] == '-'))
 		{
 			if (flag[j] == '-')
 			{
@@ -28,7 +29,6 @@ void		read_suite(t_printf *kg, char *flag, int *i)
 				kg->gauche = 0;
 				kg->pad_o = 0;
 			}
-			j++;
 		}
 	}
 	if (flag[j] >= '0' && flag[j] <= '9')
@@ -38,15 +38,16 @@ void		read_suite(t_printf *kg, char *flag, int *i)
 		kg->cham_pre = 1;
 	}
 	*i = j;
+	read_next(ap, kg, flag, i);
 }
 
-void		read_next(va_list ap, t_printf *kg, char *flag, int *i)
+void	read_next(va_list ap, t_printf *kg, char *flag, int *i)
 {
-	int j;
+	int	j;
 
 	j = *i;
-	while (flag[j] && (flag[j] != '*' &&
-	flag[j] != '.' && (!(flag[j] >= '0' && flag[j] <= '9'))))
+	while (flag[j] && (flag[j] != '*' && flag[j] != '.'
+			&& (!(flag[j] >= '0' && flag[j] <= '9'))))
 		j++;
 	if (flag[j] == '*' && !kg->val_cham && !kg->cham_pre)
 	{
@@ -68,7 +69,7 @@ void		read_next(va_list ap, t_printf *kg, char *flag, int *i)
 
 t_printf	*read_flag(va_list ap, t_printf *kg, char *flag)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (flag[i] == '-')
@@ -80,8 +81,7 @@ t_printf	*read_flag(va_list ap, t_printf *kg, char *flag)
 	}
 	else
 		kg->gauche = 1;
-	read_suite(kg, flag, &i);
-	read_next(ap, kg, flag, &i);
+	read_suite(ap, kg, flag, &i);
 	if (flag[i] >= '0' && flag[i] <= '9')
 	{
 		kg->p_val = ft_atoi(&flag[i]);
@@ -90,7 +90,8 @@ t_printf	*read_flag(va_list ap, t_printf *kg, char *flag)
 	else if (flag[i++] == '*' && !kg->p_val)
 	{
 		kg->p_val = va_arg(ap, int);
-		kg->p_val < 0 ? kg->p_sign = 1 : kg->p_sign;
+		if (kg->p_val < 0)
+			kg->p_sign = 1;
 	}
 	return (kg);
 }

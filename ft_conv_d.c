@@ -6,13 +6,13 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 14:30:14 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 20:22:13 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:12:02 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_update_d(va_list ap, t_printf *kg, int n)
+int	ft_update_d(va_list ap, t_printf *kg, int n)
 {
 	n = va_arg(ap, int);
 	kg->val = n;
@@ -79,14 +79,15 @@ void	write_d(int *len, t_printf *kg, int n)
 		ft_print_dpad(kg->nbr_car, ' ', len);
 }
 
-int		ft_conv_d(va_list ap, char *flag, int *len)
+int	ft_conv_d(va_list ap, char *flag, int *len)
 {
 	t_printf	*kg;
 	int			n;
 
 	kg = NULL;
 	n = 0;
-	if (!(kg = malloc(sizeof(t_printf))))
+	kg = malloc(sizeof(t_printf));
+	if (kg == NULL )
 		return (-1);
 	init_struct(kg);
 	kg = read_flag(ap, kg, flag);

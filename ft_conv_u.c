@@ -6,13 +6,13 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:14:48 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 20:24:22 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:23:44 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned	ft_update_u(unsigned n, t_printf *kg, va_list ap)
+unsigned int	ft_update_u(unsigned n, t_printf *kg, va_list ap)
 {
 	n = va_arg(ap, unsigned);
 	kg->val = n;
@@ -33,7 +33,7 @@ unsigned	ft_update_u(unsigned n, t_printf *kg, va_list ap)
 	return (n);
 }
 
-void		ft_write_u(int *len, t_printf *kg, unsigned n)
+void	ft_write_u(int *len, t_printf *kg, unsigned int n)
 {
 	if (!kg->p_ispec)
 		ft_lpad_d_one(kg, len);
@@ -54,7 +54,7 @@ void		ft_write_u(int *len, t_printf *kg, unsigned n)
 		ft_putu(n, len);
 }
 
-void		write_u(int *len, t_printf *kg, unsigned n)
+void	write_u(int *len, t_printf *kg, unsigned int n)
 {
 	if (kg->nbr_o_e)
 		ft_print_dpad(kg->nbr_o_e, '0', len);
@@ -73,14 +73,15 @@ void		write_u(int *len, t_printf *kg, unsigned n)
 		ft_print_dpad(kg->nbr_car, ' ', len);
 }
 
-int			ft_conv_u(va_list ap, char *flag, int *len)
+int	ft_conv_u(va_list ap, char *flag, int *len)
 {
-	t_printf	*kg;
-	unsigned	n;
+	t_printf		*kg;
+	unsigned int	n;
 
 	kg = NULL;
 	n = 0;
-	if (!(kg = (malloc(sizeof(t_printf)))))
+	kg = malloc(sizeof(t_printf));
+	if (kg == NULL)
 		return (-1);
 	init_struct(kg);
 	kg = read_flag(ap, kg, flag);

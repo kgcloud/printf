@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 15:59:44 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 18:14:06 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:26:15 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_dpad(int n, char c, int *len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i++ < n)
@@ -26,7 +26,7 @@ void	ft_print_dpad(int n, char c, int *len)
 
 void	ft_lpad_d_one(t_printf *kg, int *len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (kg->pad_o && kg->neg)
@@ -46,7 +46,7 @@ void	ft_lpad_d_one(t_printf *kg, int *len)
 
 void	ft_lpad_d_two(t_printf *kg, int *len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (kg->pad_o && kg->neg && (!(kg->p_val >= 0 && kg->p_val <= kg->len)))

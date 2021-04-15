@@ -6,15 +6,15 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:18:30 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 18:00:54 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:24:29 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		nbr_u(unsigned n)
+int	nbr_u(unsigned int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)

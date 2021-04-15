@@ -6,15 +6,15 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:28:37 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 18:02:36 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:21:23 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putu(unsigned n, int *len)
+void	ft_putu(unsigned int n, int *len)
 {
-	char *base;
+	char	*base;
 
 	base = "0123456789";
 	if (n >= 10)

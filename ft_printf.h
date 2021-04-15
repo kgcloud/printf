@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:47:59 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/05 18:58:38 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:45:38 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 
-typedef struct	s_format
+typedef struct s_format
 {
 	int			val;
 	int			neg;
@@ -65,29 +65,29 @@ int				ft_conv_d(va_list ap, char *flag, int *len);
 void			ft_print_dpad(int n, char c, int *len);
 void			ft_lpad_d_one(t_printf *kg, int *len);
 void			ft_lpad_d_two(t_printf *kg, int *len);
-void			ft_hex(unsigned n, char c, int *len);
+void			ft_hex(unsigned int n, char c, int *len);
 int				ft_conv_x(va_list ap, char *flag, int *len);
 int				ft_atoi(char *s);
 int				ft_conv_u(va_list ap, char *flag, int *len);
 void			ft_puthex(unsigned long nbl, char c, int *len);
 void			ft_putnbr(int nb, int *len);
-void			ft_putu(unsigned n, int *len);
+void			ft_putu(unsigned int n, int *len);
 int				hex_ex(unsigned long n);
-int				nbr_u(unsigned n);
+int				nbr_u(unsigned int n);
 void			ft_write_c(t_printf *kg, int i, char c);
 void			ft_write_p(t_printf *kg, int *len, int i, unsigned long n);
-void			ft_write_x(t_printf *kg, int *len, char c, unsigned n);
-void			write_x(t_printf *kg, int *len, char c, unsigned n);
-unsigned		ft_update_x(t_printf *kg, va_list ap, unsigned n);
+void			ft_write_x(t_printf *kg, int *len, char c, unsigned int n);
+void			write_x(t_printf *kg, int *len, char c, unsigned int n);
+unsigned int	ft_update_x(t_printf *kg, va_list ap, unsigned int n);
 int				ft_update_d(va_list ap, t_printf *kg, int n);
 void			ft_write_d(int *len, t_printf *kg, int n);
 void			write_d(int *len, t_printf *kg, int n);
 void			ft_update_s(t_printf *kg, char *tmp);
 void			ft_write_s(t_printf *kg, int *len, char *tmp);
-unsigned		ft_update_u(unsigned n, t_printf *kg, va_list ap);
-void			ft_write_u(int *len, t_printf *kg, unsigned n);
-void			write_u(int *len, t_printf *kg, unsigned n);
-void			read_suite(t_printf *kg, char *flag, int *i);
+unsigned int	ft_update_u(unsigned n, t_printf *kg, va_list ap);
+void			ft_write_u(int *len, t_printf *kg, unsigned int n);
+void			write_u(int *len, t_printf *kg, unsigned int n);
+void			read_suite(va_list ap, t_printf *kg, char *flag, int *i);
 void			read_next(va_list ap, t_printf *kg, char *flag, int *i);
 
 #endif

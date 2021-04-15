@@ -6,16 +6,16 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 17:41:20 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 18:12:33 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:41:51 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_atoi(char *s)
+int	ft_atoi(char *s)
 {
-	int res;
-	int neg;
+	int	res;
+	int	neg;
 
 	res = 0;
 	neg = 1;

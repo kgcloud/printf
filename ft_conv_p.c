@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 20:05:59 by canjugun          #+#    #+#             */
-/*   Updated: 2021/02/02 18:39:26 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:12:31 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_write_p(t_printf *kg, int *len, int i, unsigned long n)
 	}
 }
 
-int		ft_conv_p(va_list ap, char *flag, int *len)
+int	ft_conv_p(va_list ap, char *flag, int *len)
 {
 	t_printf		*kg;
 	unsigned long	n;
@@ -44,7 +44,8 @@ int		ft_conv_p(va_list ap, char *flag, int *len)
 
 	kg = NULL;
 	i = 0;
-	if (!(kg = malloc(sizeof(t_printf))))
+	kg = malloc(sizeof(t_printf));
+	if (kg == NULL )
 		return (-1);
 	init_struct(kg);
 	kg = read_flag(ap, kg, flag);

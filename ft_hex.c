@@ -6,15 +6,15 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 20:45:05 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 18:12:06 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:22:43 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_hex(unsigned n, char c, int *len)
+void	ft_hex(unsigned int n, char c, int *len)
 {
-	char *base;
+	char	*base;
 
 	if (c == 'x')
 		base = "0123456789abcdef";

@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 15:56:45 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 18:03:43 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:20:28 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putnbr(int nb, int *len)
 {
-	char		*base;
-	unsigned	n;
+	char			*base;
+	unsigned int	n;
 
 	base = "0123456789";
 	n = 0;

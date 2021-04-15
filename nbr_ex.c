@@ -6,15 +6,15 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 16:27:45 by canjugun          #+#    #+#             */
-/*   Updated: 2021/02/02 18:01:05 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:24:00 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		nbr_ex(int n)
+int	nbr_ex(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)

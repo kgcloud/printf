@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 18:07:10 by canjugun          #+#    #+#             */
-/*   Updated: 2021/02/10 17:02:26 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:20:54 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr(char *s, int *len, t_printf *kg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (s[0] == '\0' && ((!kg->p_ispec) || (kg->p_ispec && kg->p_val)))

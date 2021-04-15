@@ -6,15 +6,15 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 20:13:29 by canjugun          #+#    #+#             */
-/*   Updated: 2021/02/02 18:01:37 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:23:04 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		hex_ex(unsigned long n)
+int	hex_ex(unsigned long n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n < 16)

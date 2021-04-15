@@ -6,13 +6,13 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:47:35 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/02 17:52:06 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:37:32 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		transit(va_list ap, char *flag, int *len)
+int	transit(va_list ap, char *flag, int *len)
 {
 	char	c;
 	int		n;

@@ -6,7 +6,7 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 16:19:55 by canjugun          #+#    #+#             */
-/*   Updated: 2021/02/10 17:25:21 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:33:02 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_pad_s(int n, int *len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i++ < n)
@@ -60,14 +60,13 @@ void	ft_write_s(t_printf *kg, int *len, char *tmp)
 	}
 }
 
-int		ft_conv_s(va_list ap, char *flag, int *len)
+int	ft_conv_s(va_list ap, char *flag, int *len)
 {
 	t_printf	*kg;
 	char		*tmp;
 
-	tmp = NULL;
-	kg = NULL;
-	if (!(kg = malloc(sizeof(t_printf))))
+	kg = malloc(sizeof(t_printf));
+	if (kg == NULL )
 		return (-1);
 	init_struct(kg);
 	read_flag(ap, kg, flag);
@@ -76,9 +75,13 @@ int		ft_conv_s(va_list ap, char *flag, int *len)
 		free(kg);
 		return (-1);
 	}
-	if (!(tmp = ft_strdup(va_arg(ap, const char*))))
-		if (!(tmp = ft_strdup("(null)")))
+	tmp = ft_strdup(va_arg(ap, const char *));
+	if (tmp == NULL)
+	{	
+		tmp = ft_strdup("(null)");
+		if (tmp == NULL)
 			return (-1);
+	}
 	ft_update_s(kg, tmp);
 	ft_write_s(kg, len, tmp);
 	free(kg);

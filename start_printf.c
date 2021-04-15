@@ -6,13 +6,13 @@
 /*   By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:47:42 by cloud             #+#    #+#             */
-/*   Updated: 2021/02/15 16:23:24 by canjugun         ###   ########.fr       */
+/*   Updated: 2021/04/14 12:37:03 by canjugun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_type(char c)
+int	ft_type(char c)
 {
 	if (c == 'c')
 		return (1);
@@ -35,9 +35,9 @@ int		ft_type(char c)
 	return (0);
 }
 
-int		flag_len(const char *src)
+int	flag_len(const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i] && !ft_type(src[i]))
@@ -45,13 +45,12 @@ int		flag_len(const char *src)
 	return (i);
 }
 
-int		start(va_list ap, const char *s, int *len, int *i)
+int	start(va_list ap, const char *s, int *len, int *i)
 {
 	int		j;
 	char	*tmp;
 
 	j = *i;
-	tmp = NULL;
 	if (s[j + 1] == '%')
 	{
 		ft_putchar('%');
@@ -59,7 +58,8 @@ int		start(va_list ap, const char *s, int *len, int *i)
 	}
 	else
 	{
-		if (!(tmp = ft_flagdup(&s[j + 1])))
+		tmp = ft_flagdup(&s[j + 1]);
+		if (tmp == NULL)
 			return (-1);
 		if (transit(ap, tmp, len) == -1)
 		{
@@ -74,9 +74,9 @@ int		start(va_list ap, const char *s, int *len, int *i)
 	return (0);
 }
 
-int		ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	va_list ap;
+	va_list	ap;
 	int		len;
 	int		i;
 
