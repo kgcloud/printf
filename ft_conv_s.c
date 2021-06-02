@@ -12,6 +12,12 @@
 
 #include "ft_printf.h"
 
+int	ft_return(t_printf *kg)
+{
+	free(kg);
+	return (-1);
+}
+
 void	ft_print_pad_s(int n, int *len)
 {
 	int	i;
@@ -71,16 +77,13 @@ int	ft_conv_s(va_list ap, char *flag, int *len)
 	init_struct(kg);
 	read_flag(ap, kg, flag);
 	if (ft_limit(kg->val_cham) || ft_limit(kg->p_val))
-	{
-		free(kg);
-		return (-1);
-	}
+		return (ft_return(kg));
 	tmp = ft_strdup(va_arg(ap, const char *));
 	if (tmp == NULL)
 	{	
 		tmp = ft_strdup("(null)");
 		if (tmp == NULL)
-			return (-1);
+			return (ft_return(kg));
 	}
 	ft_update_s(kg, tmp);
 	ft_write_s(kg, len, tmp);

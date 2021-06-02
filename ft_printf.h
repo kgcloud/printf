@@ -89,5 +89,6 @@ void			ft_write_u(int *len, t_printf *kg, unsigned int n);
 void			write_u(int *len, t_printf *kg, unsigned int n);
 void			read_suite(va_list ap, t_printf *kg, char *flag, int *i);
 void			read_next(va_list ap, t_printf *kg, char *flag, int *i);
+int				ft_return(t_printf *kg);
 
 #endif
